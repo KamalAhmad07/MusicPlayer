@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <div class="glass main">
+      <p id="logo">
+        <i class="fa fa-music" aria-hidden="true"> Music Player</i>
+      </p>
+      <!-- left part -->
+      <div class="left">
+        <!-- song image  -->
+        <img id="track_image" />
+        <!-- vaolume part  -->
+        <div class="volume">
+          <p id="volume_show">50</p>
+          <i
+            class="fa fa-volume-up"
+            aria-hidden="true"
+            id="volume_icon"
+            onclick="mute_sound()"
+          ></i>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            onclick="volume_change()"
+            id="volume"
+          />
+        </div>
+      </div>
+
+      <!-- right part -->
+      <div class="right">
+         <div class="show_song_no"> 
+           <!-- <p id="present"></p>
+          <p></p
+          <p id="total"></p> -->
+        </div> 
+
+        <!-- song title  -->
+        <p id="title">Title.mp3</p>
+        <p id="artist">Artist name</p>
+
+        <!-- middle part  -->
+        <div class="middle">
+          <button onclick="previous_song()" id="pre">
+            <i class="fas fa-step-backward id="prev" aria-hidden="true"></i>
+          </button>
+          <button onclick="justplay()" id="play">
+            <i class="fas fa-play" id="play" aria-hidden="true"></i>
+          </button>
+          <button onclick="next_song()" id="next">
+            <i class="fas fa-step-forward" id="next" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- song duration part -->
+        <div class="duration">
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            id="duration_slider"
+            onchange="change_duration()"
+          />
+        </div>
+        <button id="auto" onclick="autoplay_switch()">Auto play</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
